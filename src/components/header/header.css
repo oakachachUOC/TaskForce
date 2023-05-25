@@ -1,0 +1,39 @@
+/* Customizaciones del encabezado de la página */
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    height: 12em;
+    flex-direction: column;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    width: var(--content-width);
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1180px) {
+    header {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header-content {
+        width: 100%;
+    }
+}

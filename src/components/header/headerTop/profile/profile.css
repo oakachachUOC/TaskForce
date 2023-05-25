@@ -1,0 +1,137 @@
+#perfil {
+    display: flex;
+    flex-direction: row;
+    border-top: 4px solid var(--azul-oscuro-uoc);
+    padding-top: 0.5em;
+    font-size: 90%;
+  }
+  
+  #perfil-nombre > p {
+    margin-bottom: 1em;
+  }
+  
+  #perfil-enlaces {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -0.5em;
+  }
+  
+  #perfil-enlaces-derecha {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  #perfil-enlaces-derecha > * {
+    margin-right: 0.5em;
+  }
+  
+  #foto-perfil {
+    width: 3.5em;
+    height: 4em;
+    background-color: white;
+    border: 1px solid grey;
+    margin-right: 0.5em;
+  }
+  
+  .perfil-enlaces-derecha-elemento {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .perfil-enlaces-derecha-elemento > img{
+    margin-bottom: -3em;
+  }
+  
+  #nombre-usuario {
+    margin-top: 0.3em;
+  }
+  
+  @media screen and (max-width: 800px) {
+    #nombre-usuario {
+      display: none;
+    }
+  
+    #perfil-enlaces > a > p,
+    #perfil-enlaces-derecha > a > p {
+      display: none;
+    }
+  
+    #nombre-enlaces {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      margin-top: -25px;
+    }
+  
+    #perfil-enlaces {
+      width: 75%;
+      justify-content: space-evenly;
+      margin-top: 0;
+    }
+  
+    #perfil-nombre > a > img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    #perfil-enlaces > a > img {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: 5px;
+    }
+  
+    #perfil-enlaces-derecha > a > img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    #perfil-enlaces-derecha {
+      justify-content: space-evenly;
+      width: 50%;
+    }
+  
+    #foto-perfil {
+      visibility: collapse;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    #perfil {
+      width: 8em;
+      padding-top: 0;
+    }
+  
+    #nombre-enlaces {
+      width: 100%;
+    }
+  
+    /* Icono de la puerta. */
+    #perfil-nombre > a > img {
+      width: 2em;
+      height: 2em;
+      margin-left: 4px;
+      margin-right: 7px;
+    }
+  
+    /* Icono del correo y grupos. */
+    #perfil-enlaces-derecha > a > img {
+      width: 2em;
+      height: 2em;
+    }
+  
+    /* Icono del símbolo +*/
+    #perfil-enlaces > a > img {
+      width: 1.5em;
+      height: 1.5em;
+      top: 1px;
+    }
+  
+    #perfil-enlaces-derecha {
+      justify-content: space-evenly;
+    }
+  }
+  

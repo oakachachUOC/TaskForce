@@ -1,0 +1,11 @@
+#month-selector {
+    background-color: var(--gris-medio-uoc);
+    border: none;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    width: 65%;
+    font-size: 1.3em;
+    color: var(--azul-oscuro-uoc);
+    font-weight: bolder;
+  }
+  

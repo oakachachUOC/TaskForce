@@ -1,0 +1,119 @@
+input[type="checkbox"] {
+    min-width: 1.5em;
+    min-height: 1.5em;
+    margin-left: 0.5em;
+    margin-right: 1em;
+    accent-color: var(--azul-oscuro-uoc);
+  }
+  
+  input[type="checkbox"]:hover {
+    cursor: pointer;
+  }
+  
+  #contenido {
+    min-width: var(--content-width);
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 1180px) {
+    #tareas-asignaturas {
+      flex-direction: column-reverse;
+    }
+  
+    #seccion-tareas,
+    #seccion-asignaturas {
+      width: 98%;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    /* Apartado de la cuadrícula. */
+  
+    .task-name-title,
+    .task-name {
+      display: none;
+    }
+  
+    .table-header {
+      background-color: var(--gris-claro-uoc);
+    }
+  
+    .subtask-title,
+    .subtask {
+      grid-column: span 2;
+    }
+  
+    /* Modificaciones añadidas. */
+  
+    .task-header,
+    .task,
+    .task-info {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  
+    .task-info {
+      grid-column: span 3;
+    }
+  
+    .subject-title {
+      grid-column: span 3;
+    }
+  
+    .task-date {
+      grid-row: span 1;
+    }
+  
+    .subject,
+    .subtask-header {
+      grid-column: span 4;
+    }
+  
+    /* Subtareas. */
+  
+    .subtask-header,
+    .subtask-info {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  
+    .subtask-date-title,
+    .subtask-date {
+      grid-column: span 2;
+    }
+    .subtask-title,
+    .subtask {
+      grid-column: span 4;
+    }
+  
+    h4 {
+      font-size: 1.5em;
+    }
+  
+    .icon-tray {
+      justify-content: space-evenly;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    #grid {
+      font-size: 75%;
+    }
+  
+    /* Esto afecta al icono de ayuda. */
+    .subtask > .icon-tray > span > a > img {
+      width: 3em;
+      height: 3em;
+      margin-bottom: -10px;
+    }
+  
+    .subtask > .icon-tray > span > img {
+      width: 1.4em;
+      height: 1.4em;
+      font-size: 85%;
+    }
+  }
+  

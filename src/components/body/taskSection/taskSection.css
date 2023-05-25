@@ -1,0 +1,231 @@
+/* Customizaciones de la sección de tareas de la página */
+
+#seccion-tareas {
+    width: 65%;
+    border-top: 4px solid var(--azul-oscuro-uoc);
+    margin-top: 4.5em;
+}
+
+#seccion-tareas>h1 {
+    margin-top: 0;
+    font-size: 1.7em;
+}
+
+#grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#table-header {
+    width: 100%;
+    padding: 1em 0em;
+    margin: 2px 0;
+    background-color: var(--gris-claro-uoc);
+}
+
+#table-header>div {
+    background-color: var(--gris-medio-uoc);
+    width: 20em;
+    padding: 0.5em;
+    margin-left: 1.5em;
+    font-weight: bolder;
+}
+
+.task-header,
+.task {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    margin-bottom: 2px;
+}
+
+.task-info,
+.subtask-header,
+.subtask-info {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+}
+
+/* INICIO tamaño casillas */
+
+.subtask-container {
+    grid-column: span 4;
+    margin-bottom: -2px;
+}
+
+.subtask-info {
+    margin-bottom: 2px;
+}
+
+.task-date-title,
+.subject-title,
+.task-name-title,
+.task-date,
+.subject,
+.task-name,
+.subtask-date-title,
+.subtask-title,
+.subtask-date,
+.subtask {
+    padding: 1em;
+}
+
+.task-date-title,
+.task-date,
+.subtask-date-title,
+.subtask-date {
+    grid-column: span 1;
+}
+
+.subject-title,
+.task-name-title,
+.subject,
+.task-name {
+    grid-column: span 2;
+}
+
+.subtask-title,
+.subtask {
+    grid-column: span 3;
+}
+
+/* FIN tamaño casillas */
+
+/* INICIO Colores de las casillas */
+
+.task-date-title,
+.task-name-title,
+.subject-title,
+.subtask-date-title,
+.subtask-title {
+    background-color: var(--gris-medio-uoc);
+}
+
+.task-date,
+.subject,
+.task-name {
+    background-color: var(--gris-claro-uoc);
+}
+
+.pending {
+    background-color: var(--gris-claro-uoc);
+}
+
+.completed {
+    background-color: var(--azul-claro-uoc);
+}
+
+.uncompleted {
+    background-color: var(--rojo-uoc);
+}
+
+/* FIN Colores de las casillas */
+
+.subject {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* center */
+}
+
+.subtask-date,
+.task-date {
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    background-color: var(--gris-claro-uoc);
+}
+
+.actual {
+    background-color: var(--azul-claro-uoc);
+}
+
+.actual:hover {
+    cursor: pointer;
+}
+
+#perfil-nombre {
+    display: flex;
+    flex-direction: row;
+}
+
+.asignatura {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.inline {
+    border-color: var(--gris-medio-uoc);
+    min-width: 1em;
+    min-height: 1em;
+    margin-right: 1em;
+}
+
+.text-tray {
+    display: flex;
+    flex-direction: row;
+}
+
+/* INICIO icon tray */
+
+.icon-tray {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.icon-tray-element {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.icon-tray-element>* {
+    margin-bottom: 0;
+}
+
+/* FIN icon tray */
+
+/* Para las tareas completadas (asignatura) */
+.completed>.text-tray>a,
+.completed>a,
+.completed.task-date,
+.completed.subtask-date {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* Para las tareas completadas (tarea) */
+
+@media screen and (max-width: 1180px) {
+    #seccion-tareas {
+        width: 100%;
+        border-top: 4px solid var(--azul-oscuro-uoc);
+        margin-top: 4.5em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .subject-title,
+    .task-name-title,
+    .subject,
+    .task-name {
+        grid-column: span 4;
+    }
+}

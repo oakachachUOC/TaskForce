@@ -1,0 +1,24 @@
+.tareas-vista {
+    width: 49%;
+  }
+  
+  #mensual-semestral {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+  }
+  
+  #monthly-view,
+  #semesterly-view {
+    font-weight: lighter;
+    margin-top: 0.1em;
+    padding-top: 0.1em;
+    border-top: 2px solid var(--gris-medio-uoc);
+  }
+  
+  #monthly-view.active-view,
+  #semesterly-view.active-view {
+    border-top: 2px solid var(--azul-oscuro-uoc);
+    font-weight: bolder;
+  }
+  

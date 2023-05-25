@@ -1,0 +1,26 @@
+#header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: var(--content-width);
+    align-items: flex-start;
+  }
+  
+  @media screen and (max-width: 800px) {
+    #header-top {
+      width: 98%;
+    }
+  
+    #logo-uoc > img {
+      width: 200px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    #logo-uoc > img {
+      width: 140px;
+      position: relative;
+      top: 2px;
+    }
+  }
+  
