@@ -1,0 +1,66 @@
+#login-page {
+    background-image: url(../images/source/login-page-background.jpg);
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Arial';
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+    border: 5px solid var(--azul-claro-uoc);
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1.5em;
+    background-color: #ffffffbd;
+}
+
+#login-form > * {
+    margin: 1em;
+}
+
+input[type="text"], input[type="password"] {
+    height: 2em;
+    width: 15em;
+    font-size: 1.3em;
+    padding: 0.5em;
+    color: var(--azul-oscuro-uoc);
+    border-color: var(--gris-claro-uoc);
+    background-color: #ffffffbd;
+    font-family: 'Arial';
+}
+
+label {
+    display: block;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-bottom: 0.1em;
+}
+
+button {
+    font-size: 1.3em;
+    color: white;
+    padding: 0.5em;
+    background-color: var(--azul-oscuro-uoc);
+    border: none;
+    font-family: 'Arial';
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#login-error-message {
+    padding: 0;
+    margin: 0;
+    color: red;
+}

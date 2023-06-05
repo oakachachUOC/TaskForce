@@ -8,7 +8,7 @@ export const Profile = (props) => {
     <div id="perfil">
       <div id="foto-perfil"></div>
       <div id="nombre-enlaces">
-        <UserName sessionName={props.sessionName} />
+        <UserName sessionName={props.sessionName} handleLogout={props.handleLogout} />
         <Links />
       </div>
     </div>
@@ -16,6 +16,11 @@ export const Profile = (props) => {
 }
 
 const UserName = (props) => {
+
+  const handleClick = () => {
+    props.handleLogout();
+  }
+
   return (
     <div id="perfil-nombre">
       <a>
@@ -23,7 +28,7 @@ const UserName = (props) => {
           {props.sessionName}
         </p>
       </a>
-      <a>
+      <a onClick={() => handleClick()}>
         <Door />
       </a>
     </div>

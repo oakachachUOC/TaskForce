@@ -1,40 +1,47 @@
-import React, { useState, useEffect } from "react";
-import { Body } from "./body/body";
-import { Header } from "./header/header";
+import React, { useState } from "react";
+import { VirtualCampus } from "./virtualCampus/virtualCampus";
+import { LoginPage } from "./loginPage/loginPage";
 import "./App.css";
 
 /* Código principal de la aplicación */
 
 function App() {
-  const user = "oakachach";
-  const [session, setSession] = useState();
-  const [loading, setLoading] = useState(true);
+  const [session, setSession] = useState({});
+  const [loggedSuccessfully, setLoggedSuccessfully] = useState(false);
+  const [loginErrorMessage, setLoginErrorMessage] = useState(""); 
 
-  // no hace falta parsear a json. ya viene en json
-  useEffect(() => {
-    fetch(`/users/${user}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setSession(data);
-        setLoading(false);
-      });
-  }, []);
+  const handleSubmit = async (username, password) => {
+    if (username === undefined && password === undefined) { return; }
 
-  if (loading) {
-    return <h1></h1>;
+    const response = await fetch(`/users/${username}/${password}`);
+
+    try {
+      const session = await response.json();
+      setSession(session);
+      setLoggedSuccessfully(true);
+    } catch {
+      setLoginErrorMessage("El usuario o contraseña introducidos son incorrectos.");
+    }
+  }
+
+  const handleLogout = () => {
+    setLoggedSuccessfully(false);
+  }
+
+  if (!loggedSuccessfully) {
+    return (
+        <LoginPage  
+          handleSubmit={(username, password) => handleSubmit(username, password)}
+          loginErrorMessage={loginErrorMessage}
+        />
+    );
   }
 
   return (
-    <div className="App">
-      <div id="container">
-        <Header sessionName={`${session.fullName} (${session.role})`} />
-        <Body
-          currentEnrollment={
-            session.enrollments[session.enrollments.length - 1]
-          }
-        />
-      </div>
-    </div>
+      <VirtualCampus 
+        session={session}
+        handleLogout={() => handleLogout()}
+      />
   );
 }
 

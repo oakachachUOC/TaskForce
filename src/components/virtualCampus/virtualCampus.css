@@ -1,0 +1,75 @@
+body {
+    font-family: "Arial";
+    color: var(--azul-oscuro-uoc);
+    height: 150vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--azul-oscuro-uoc);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.right {
+    text-align: right;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+a {
+    color: var(--azul-oscuro-uoc);
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+/* Media query para cuando la pantalla mida menos de 1180px */
+
+@media screen and (max-width: 1180px) {
+    :root {
+        --content-width: 800px;
+        --home-button-width: 5rem;
+        --menu-button-width: 9rem;
+        --menu-button-height: 5rem;
+    }
+}
+
+/* Media query para cuanod la pantalla mida menos de 800px */
+
+@media screen and (max-width: 800px) {
+    :root {
+        --content-width: 450px;
+        --home-button-width: 5rem;
+        --menu-button-width: 9rem;
+        --menu-button-height: 5rem;
+    }
+}
+
+/* Media query para cuando la pantalla mida menos de 500px */
+
+@media screen and (max-width: 500px) {
+    :root {
+        --content-width: 310px;
+        --home-button-width: 5rem;
+        --menu-button-width: 9rem;
+        --menu-button-height: 5rem;
+    }
+}

@@ -4,10 +4,12 @@ import { ObjectId } from "mongodb";
 
 const router = express.Router();
 
-// Get a single post
-router.get("/:username", async (req, res) => {
+router.get("/:username/:password", async (req, res) => {
     let collection = await db.collection("users");
-    let query = { username: req.params.username };
+    let query = { 
+        username: req.params.username,
+        password: req.params.password
+     };
     let result = await collection.findOne(query);
 
     if (!result) res.send("Not found").status(404);

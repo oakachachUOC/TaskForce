@@ -12,7 +12,7 @@ export const HeaderTop = (props) => {
             <Logo />
             <div id="servicio-atencion-perfil">
                 <AttentionService />
-                <Profile sessionName={props.sessionName} />
+                <Profile sessionName={props.sessionName} handleLogout={props.handleLogout} />
             </div>
         </section>
     );

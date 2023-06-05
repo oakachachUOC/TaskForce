@@ -9,7 +9,7 @@ export const Header = (props) => {
   return (
     <header>
       <div id="background">
-        <HeaderTop sessionName={props.sessionName} />
+        <HeaderTop sessionName={props.sessionName} handleLogout={props.handleLogout} />
         <HeaderBottom />
       </div>
     </header>
