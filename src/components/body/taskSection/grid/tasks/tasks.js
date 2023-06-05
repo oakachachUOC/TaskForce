@@ -4,7 +4,7 @@ import { Task } from "./task/task";
 
 export const Tasks = (props) => {
   const final = [];
-  const classrooms = props.classrooms;
+  const classrooms = props.session.currentEnrollment.classrooms;
 
   for (let classroom in classrooms) {
     const tasks = classrooms[classroom].tasks;
@@ -13,10 +13,15 @@ export const Tasks = (props) => {
       final.push(
         <li key={tasks[task].id}>
           <Task
-            visibleMonths={props.visibleMonths}
-            visibleSubjects={props.visibleSubjects}
-            visibleTaskStatus={props.visibleTaskStatus}
-            info={tasks[task]}
+            session={{
+              username: props.session.username,
+              year: props.session.year,
+              semester: props.session.semester,
+              task: tasks[task],
+              visibleMonths: props.session.visibleMonths,
+              visibleSubjects: props.session.visibleSubjects,
+              visibleTaskStatus: props.session.visibleTaskStatus
+            }}
           />
         </li>
       );

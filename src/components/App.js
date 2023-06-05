@@ -3,8 +3,10 @@ import { VirtualCampus } from "./virtualCampus/virtualCampus";
 import { LoginPage } from "./loginPage/loginPage";
 import "./App.css";
 
-/* Código principal de la aplicación */
-
+/**
+ * Main app code.
+ * @returns render of the app.
+ */
 function App() {
   const [session, setSession] = useState({});
   const [loggedSuccessfully, setLoggedSuccessfully] = useState(false);

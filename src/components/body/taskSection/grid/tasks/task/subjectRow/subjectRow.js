@@ -2,34 +2,34 @@ import React from "react";
 import { getFormattedDate, checkInitialState } from "../task";
 import { IconTray } from "../iconTray/iconTray";
 
-export const Subject = ({ info, status, onChange }) => {
+export const Subject = (props) => {
     return (
-        <div className={status + " subject"}>
+        <div className={props.status + " subject"}>
             <div className="text-tray">
                 <input
                     title="Marcar como completada"
                     type="checkbox"
-                    defaultChecked={checkInitialState(info.status)}
-                    onChange={(e) => onChange(e.target.checked)}
+                    defaultChecked={checkInitialState(props.task.status)}
+                    onChange={(e) => props.onChange(e.target.checked)}
                 />
                 <a title="Ir a la página de la asignatura" className="bolder">
-                    {info.subjectName}
+                    {props.task.subjectName}
                 </a>
             </div>
-            <IconTray success={0} working={0} estimated={info.estimatedHours} />
+            <IconTray success={props.rates.successRate} working={props.rates.workingRate} estimated={props.task.estimatedHours} />
         </div>
     );
 };
 
-export const TaskDate = ({ date, status }) => {
-    let formattedDate = getFormattedDate(date);
-    return <div className={`task-date ${status}`}>{formattedDate}</div>;
+export const TaskDate = (props) => {
+    let formattedDate = getFormattedDate(props.date);
+    return <div className={`task-date ${props.status}`}>{formattedDate}</div>;
 };
 
-export const TaskName = ({ title, status }) => {
+export const TaskName = (props) => {
     return (
-        <div className={`task-name ${status}`}>
-            <a className="bolder">{title}</a>
+        <div className={`task-name ${props.status}`}>
+            <a className="bolder">{props.title}</a>
         </div>
     );
 };

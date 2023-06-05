@@ -18,8 +18,8 @@ export const LoginPage = (props) => {
 
 
 export const LoginForm = (props) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("oakachach");
+    const [password, setPassword] = useState("494658");
 
     const handleSubmit = (e) => {
         e.preventDefault();

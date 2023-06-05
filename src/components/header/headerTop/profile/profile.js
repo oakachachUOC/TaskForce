@@ -1,6 +1,8 @@
 import React from 'react'
 import { Door, Groups, Plus, Gmail } from '../../../images/images'
 import './profile.css'
+
+
 /* Sección de perfil de usuario */
 
 export const Profile = (props) => {

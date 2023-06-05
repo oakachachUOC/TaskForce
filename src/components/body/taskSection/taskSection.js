@@ -16,11 +16,7 @@ export const TaskSection = (props) => {
                 />
             </div>
             <Grid
-                isSemesterViewActive={props.isSemesterViewActive}
-                visibleMonths={props.visibleMonths}
-                visibleSubjects={props.visibleSubjects}
-                visibleTaskStatus={props.visibleTaskStatus}
-                currentEnrollment={props.currentEnrollment}
+                session={props.session}
                 onChange={props.onChange}
             />
         </section>

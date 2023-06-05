@@ -5,19 +5,19 @@ import { Tasks } from "./tasks/tasks";
 
 /* Contenido referente a la tabla del listado de tareas */
 export const Grid = (props) => {
+
   return (
     <div id="grid">
       <TableHeader
-        isSemesterViewActive={props.isSemesterViewActive}
-        enrollmentYear={props.currentEnrollment.year}
-        enrollmentSemester={props.currentEnrollment.semester}
+        session={{
+          isSemesterViewActive: props.session.isSemesterViewActive,
+          enrollmentYear: props.session.currentEnrollment.year,
+          enrollmentSemester: props.session.currentEnrollment.semester
+        }}
         onChange={props.onChange}
       />
       <Tasks
-        visibleMonths={props.visibleMonths}
-        visibleSubjects={props.visibleSubjects}
-        visibleTaskStatus={props.visibleTaskStatus}
-        classrooms={props.currentEnrollment.classrooms}
+        session={props.session}
       />
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import "./tableHeader.css";
 
 export const TableHeader = (props) => {
+  console.log(props);
   const currentMonth = new Date().getMonth() + 1;
   const isSelected = (value) => (value === currentMonth ? true : false);
 
@@ -9,41 +10,41 @@ export const TableHeader = (props) => {
     props.onChange("month", monthNumber, true);
   };
 
-  if (props.enrollmentSemester === 1) {
+  if (props.session.enrollmentSemester === 1) {
     return (
       <div id="table-header">
         <select
           onChange={(e) =>
             handleChange(e.target.options[e.target.selectedIndex].value)
           }
-          disabled={props.isSemesterViewActive}
+          disabled={props.session.isSemesterViewActive}
           name="month-selector"
           id="month-selector"
         >
           <option
             value="3"
             selected={isSelected(3)}
-          >{`Marzo ${props.enrollmentYear}`}</option>
+          >{`Marzo ${props.session.enrollmentYear}`}</option>
           <option
             value="4"
             selected={isSelected(4)}
-          >{`Abril ${props.enrollmentYear}`}</option>
+          >{`Abril ${props.session.enrollmentYear}`}</option>
           <option
             value="5"
             selected={isSelected(5)}
-          >{`Mayo ${props.enrollmentYear}`}</option>
+          >{`Mayo ${props.session.enrollmentYear}`}</option>
           <option
             value="6"
             selected={isSelected(6)}
-          >{`Junio ${props.enrollmentYear}`}</option>
+          >{`Junio ${props.session.enrollmentYear}`}</option>
           <option
             selected={isSelected(7)}
             value="7"
-          >{`Julio ${props.enrollmentYear}`}</option>
+          >{`Julio ${props.session.enrollmentYear}`}</option>
           <option
             value="8"
             selected={isSelected(8)}
-          >{`Agosto ${props.enrollmentYear}`}</option>
+          >{`Agosto ${props.session.enrollmentYear}`}</option>
         </select>
       </div>
     );
@@ -54,27 +55,27 @@ export const TableHeader = (props) => {
           <option
             value="9"
             selected={isSelected(9)}
-          >{`Septiembre ${props.enrollmentYear}`}</option>
+          >{`Septiembre ${props.session.enrollmentYear}`}</option>
           <option
             value="10"
             selected={isSelected(10)}
-          >{`Octubre ${props.enrollmentYear}`}</option>
+          >{`Octubre ${props.session.enrollmentYear}`}</option>
           <option
             value="11"
             selected={isSelected(11)}
-          >{`Noviembre ${props.enrollmentYear}`}</option>
+          >{`Noviembre ${props.session.enrollmentYear}`}</option>
           <option
             value="12"
             selected={isSelected(12)}
-          >{`Diciembre ${props.enrollmentYear}`}</option>
+          >{`Diciembre ${props.session.enrollmentYear}`}</option>
           <option
             value="1"
             selected={isSelected(1)}
-          >{`Enero ${props.enrollmentYear}`}</option>
+          >{`Enero ${props.session.enrollmentYear}`}</option>
           <option
             value="2"
             selected={isSelected(2)}
-          >{`Febrero ${props.enrollmentYear}`}</option>
+          >{`Febrero ${props.session.enrollmentYear}`}</option>
         </select>
       </div>
     );

@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Body } from "../body/body";
 import { Header } from "../header/header";
 import "./virtualCampus.css";
 
-/* Código principal de la aplicación */
-
+// TODO: En función del rol del usuario, hay que renderizar un body u otro.
 export const VirtualCampus = (props) => {
-  const user = "oakachach";
-  const [session, setSession] = useState();
-  const [loading, setLoading] = useState(true);
+  const currentEnrollment = props.session.enrollments[props.session.enrollments.length - 1];
 
   return (
     <div className="App">
@@ -17,9 +14,12 @@ export const VirtualCampus = (props) => {
           sessionName={`${props.session.fullName} (${props.session.role})`}
           handleLogout={props.handleLogout} />
         <Body
-          currentEnrollment={
-            props.session.enrollments[props.session.enrollments.length - 1]
-          }
+          session={{
+            username: props.username,
+            currentEnrollment: currentEnrollment,
+            year: currentEnrollment.year,
+            semester: currentEnrollment.semester,
+          }}
         />
       </div>
     </div>
